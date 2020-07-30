@@ -374,7 +374,7 @@ exports.updateCategory = functions.https.onRequest((request, response) => {
         id: mId,
         name: mName
     }
-    let ref = db.collection('category').doc(mId).update(category)
+    db.collection('category').doc(mId).update(category)
         .then(function () {
             response.json({ "status": "ok", "message": "Cập nhật thành công" });
             return 1
